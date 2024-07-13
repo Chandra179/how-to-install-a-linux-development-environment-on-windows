@@ -167,7 +167,8 @@ Browse [iterm2colorschemes.com](https://iterm2colorschemes.com/) and download th
 
 ## Make git use Windows Credential Manager
 
-`edit ~/bin/git-credential-manager`
+mkdir -p ~/bin
+nano ~/bin/git-credential-manager
 
 And make the file's contents be:
 
