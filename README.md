@@ -313,3 +313,29 @@ What has changed is their Unix file modes (the `mod` in `chmod`) - let's disable
 ## About the author
 
 I've been using Linux for a little over 20 years, including at places like Red Hat and IBM's dedicated Linux group. I'm the example `sudo` user in `/etc/sudoers` in a couple of distros.
+
+## Java installation on ubuntu for WSL development
+reference : https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc
+```
+// install java
+sudo apt update
+sudo apt install wget
+wget https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.tar.gz
+
+// extract
+mkdir -p ~/java
+tar -xzf amazon-corretto-21.0.4.7.1-linux-x64.tar.gz -C ~/java
+
+// setting env var
+nano ~/.bashrc
+export JAVA_HOME=~/java/amazon-corretto-21.0.4.7.1-linux-x64
+export PATH=$JAVA_HOME/bin:$PATH
+
+// setting vscode wsl java jdk
+open vscode settings (ctrl + shift + p) search : open remote settings (JSON) (WSL...)
+{
+    "jdk.jdkhome": "/home/chandra/java/amazon-corretto-21.0.4.7.1-linux-x64",
+    // "java.home": "/home/chandra/java/amazon-corretto-21.0.4.7.1-linux-x64" //deprecated
+    "java.jdt.ls.java.home": "//home/chandra/java/amazon-corretto-21.0.4.7.1-linux-x64"
+}
+```
