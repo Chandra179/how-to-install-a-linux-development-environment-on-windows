@@ -334,6 +334,9 @@ open vscode settings (ctrl + shift + p) search : open remote settings (JSON) (WS
 }
 ```
 
+## Golang installation on ubuntu for WSL development
+for golang installation we can download the zip and extract and map the path
+
 ## Conclusion
 
 ## About the author
